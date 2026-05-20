@@ -6,7 +6,7 @@ export const profile = {
   location: "Dubai, United Arab Emirates",
   linkedin: "https://www.linkedin.com/in/amirrezabagherzadeh/",
   website: "https://amirrezabz.com",
-  email: "",
+  email: "info@amirrezabz.com",
   github: "",
   profileImage:
     "https://media.licdn.com/dms/image/v2/D4D03AQHWwNHmxLonfg/profile-displayphoto-crop_800_800/B4DZ3EUMZGG4AI-/0/1777115123948?e=1781136000&v=beta&t=aHHa8pxRdSsuLKmWRrK9GIyvvcaF1ur0r-PAtZYQGkM",
