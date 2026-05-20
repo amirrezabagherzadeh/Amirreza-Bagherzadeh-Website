@@ -29,4 +29,4 @@ npm run build
 
 ## Data Notes
 
-The public email is `info@amirrezabz.com`. GitHub is intentionally empty because it was not present in the verified LinkedIn/Apify source. Certifications, recommendations, skills, courses, projects, profile image, and website link are stored in `src/data/profile.ts` and can be edited there.
+The public email is `bagherzadeh@dubaielite.pl`. GitHub is intentionally empty because it was not present in the verified LinkedIn/Apify source. Certifications, recommendations, skills, courses, projects, profile image, and website link are stored in `src/data/profile.ts` and can be edited there.
