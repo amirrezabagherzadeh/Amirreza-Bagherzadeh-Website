@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050506;
+  --foreground: #f6f3ea;
+  --muted: #a7a39b;
+  --line: rgba(246, 243, 234, 0.14);
+  --panel: rgba(255, 255, 255, 0.055);
+  --panel-strong: rgba(255, 255, 255, 0.09);
+  --accent: #5eead4;
+  --accent-strong: #38bdf8;
+  --gold: #e7c875;
+  --gold-deep: #9b7a2f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Jost", "Jost Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Bodoni Moda", "Bodoni Moda Fallback", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-padding-top: 8rem;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(94, 234, 212, 0.11), transparent 30rem),
+    radial-gradient(circle at 80% 12%, rgba(231, 200, 117, 0.08), transparent 32rem),
+    linear-gradient(180deg, #050506 0%, #08090a 52%, #030304 100%);
+  color: var(--foreground);
+  font-family: "Jost", "Jost Fallback", ui-sans-serif, system-ui, sans-serif;
+}
+
+body::selection {
+  background: rgba(94, 234, 212, 0.34);
+  color: #ffffff;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+section {
+  scroll-margin-top: 8rem;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.portfolio-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.noise-layer {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.36'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.section-shell {
+  position: relative;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  opacity: 0.8;
+}
+
+.skill-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.skill-marquee:hover {
+  animation-play-state: paused;
+}
+
+.card-sheen {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.card-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.11) 42%, transparent 58%);
+  opacity: 0;
+  transform: translateX(-65%);
+  transition: opacity 260ms ease, transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.card-sheen:hover::after {
+  opacity: 1;
+  transform: translateX(65%);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
