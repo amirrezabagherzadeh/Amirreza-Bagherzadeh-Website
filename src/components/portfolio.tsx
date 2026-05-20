@@ -655,15 +655,21 @@ function SearchAnswers() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           label="Search Answers"
-          title="Direct answers for search engines, AI assistants, and business inquiries."
-          copy="Concise, factual answers help people and answer engines understand the profile without changing the visual tone of the site."
+          title="Quick answers to the questions people usually ask."
+          copy="A short, readable snapshot of Amirreza's background, focus, and contact options."
         />
         <div className="mt-14 grid gap-4 lg:grid-cols-3">
           {answerQuestions.map((item, index) => (
             <Reveal key={item.question} delay={index * 0.05}>
               <article className="h-full rounded-[1.6rem] border border-white/10 bg-white/[0.045] p-6">
-                <h3 className="text-xl font-semibold leading-7 text-white">{item.question}</h3>
-                <p className="mt-5 leading-8 text-white/74">{item.answer}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">
+                  Answer
+                </p>
+                <h3 className="mt-4 text-xl font-semibold leading-7 text-white">{item.question}</h3>
+                <p className="mt-4 text-sm font-medium leading-6 text-white/60">
+                  Clear and concise
+                </p>
+                <p className="mt-3 leading-8 text-white/78">{item.answer}</p>
               </article>
             </Reveal>
           ))}
