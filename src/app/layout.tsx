@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, Jost } from "next/font/google";
+import { seo, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const jost = Jost({
@@ -16,23 +17,52 @@ const bodoniModa = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: "Amirreza Bagherzadeh | Voice AI Automation Specialist",
-  description:
-    "Premium personal portfolio for Amirreza Bagherzadeh, Head of Technology Department at Dubai Elite Investments By Al Maktoum and Voice AI Automation Specialist in Dubai.",
-  keywords: [
-    "Amirreza Bagherzadeh",
-    "Voice AI Automation",
-    "AI Automation Engineer",
-    "Dubai Elite Investments By Al Maktoum",
-    "Digital Marketing",
-    "Web Design",
-  ],
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: seo.title,
+    template: `%s | Amirreza Bagherzadeh`,
+  },
+  description: seo.description,
+  keywords: seo.keywords,
+  applicationName: "Amirreza Bagherzadeh Portfolio",
+  authors: [{ name: "Amirreza Bagherzadeh", url: siteUrl }],
+  creator: "Amirreza Bagherzadeh",
+  publisher: "Amirreza Bagherzadeh",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Amirreza Bagherzadeh | Voice AI Automation Specialist",
-    description:
-      "Practical AI automation, Voice AI receptionist systems, digital strategy, and web experiences for businesses.",
+    title: seo.title,
+    description: seo.description,
+    url: siteUrl,
+    siteName: "Amirreza Bagherzadeh Portfolio",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: seo.image,
+        width: 1536,
+        height: 1024,
+        alt: "Premium AI automation portfolio visual for Amirreza Bagherzadeh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+    images: [seo.image],
   },
 };
 

@@ -37,6 +37,7 @@ import {
   skillGroups,
   testimonials,
 } from "@/data/profile";
+import { answerQuestions } from "@/lib/seo";
 
 const mobileNavigation = [
   { label: "About", href: "#about" },
@@ -648,6 +649,30 @@ function Contact() {
   );
 }
 
+function SearchAnswers() {
+  return (
+    <section id="answers" className="section-shell px-5 py-24 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          label="Search Answers"
+          title="Direct answers for search engines, AI assistants, and business inquiries."
+          copy="Concise, factual answers help people and answer engines understand the profile without changing the visual tone of the site."
+        />
+        <div className="mt-14 grid gap-4 lg:grid-cols-3">
+          {answerQuestions.map((item, index) => (
+            <Reveal key={item.question} delay={index * 0.05}>
+              <article className="h-full rounded-[1.6rem] border border-white/10 bg-white/[0.045] p-6">
+                <h3 className="text-xl font-semibold leading-7 text-white">{item.question}</h3>
+                <p className="mt-5 leading-8 text-white/74">{item.answer}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function InfoLink({
   title,
   detail,
@@ -711,6 +736,7 @@ export function PortfolioPage() {
       <Projects />
       <Proof />
       <Education />
+      <SearchAnswers />
       <Contact />
       <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-white/58">
         <p>{profile.name} · Voice AI Automation Specialist</p>

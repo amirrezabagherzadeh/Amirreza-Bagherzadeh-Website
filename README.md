@@ -23,6 +23,7 @@ npm run build
 - Profile, experience, skills, projects, education, testimonials, and contact links: `src/data/profile.ts`
 - Main animated portfolio UI: `src/components/portfolio.tsx`
 - SEO metadata and fonts: `src/app/layout.tsx`
+- Technical SEO, JSON-LD, robots, and sitemap helpers: `src/lib/seo.ts`, `src/app/robots.ts`, `src/app/sitemap.ts`
 - Global theme and responsive styling: `src/app/globals.css`
 - Image2 prompts for generated assets: `IMAGE2_PROMPTS.md`
 - Generated local visuals: `public/visuals`
