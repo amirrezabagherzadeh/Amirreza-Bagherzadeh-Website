@@ -8,7 +8,7 @@ import {
   testimonials,
 } from "@/data/profile";
 
-export const siteUrl = "https://amirreza-bagherzadeh-website.vercel.app";
+export const siteUrl = "https://amirrezabz.com";
 
 export const seo = {
   title:
